@@ -1,0 +1,23 @@
+﻿using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingresa el peso en kg: ");
+        double peso = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingresa la altura en metros (ej. 1.70): ");
+        double altura = Convert.ToDouble(Console.ReadLine());
+
+        if (altura > 0)
+        {
+            double imc = peso / (altura * altura);
+            Console.WriteLine($"\nTu Índice de Masa Corporal (IMC) es: {imc:F2}");
+        }
+        else
+        {
+            Console.WriteLine("La altura debe ser un valor positivo.");
+        }
+    }
+}
