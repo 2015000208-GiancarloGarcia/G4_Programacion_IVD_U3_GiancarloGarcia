@@ -1,0 +1,36 @@
+﻿using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] nombres = new string[10];
+        string[] telefonos = new string[10];
+
+        
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine($"--- Persona {i + 1} ---");
+            Console.Write("Nombre: ");
+            nombres[i] = Console.ReadLine();
+
+            Console.Write("Teléfono: ");
+            telefonos[i] = Console.ReadLine();
+            Console.WriteLine();
+        }
+
+        
+        Console.Write("Ingresa la posición que deseas consultar (1-10): ");
+        if (int.TryParse(Console.ReadLine(), out int posicion) && posicion >= 1 && posicion <= 10)
+        {
+            int indice = posicion - 1;
+            Console.WriteLine("\n=== DATOS ENCONTRADOS ===");
+            Console.WriteLine($"Nombre: {nombres[indice]}");
+            Console.WriteLine($"Teléfono: {telefonos[indice]}");
+        }
+        else
+        {
+            Console.WriteLine("Posición no válida. Debe ser un número entre 1 y 10.");
+        }
+    }
+}
