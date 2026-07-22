@@ -1,0 +1,63 @@
+﻿C#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Clear();
+        Console.WriteLine("=== CONVERTIDOR DE UNIDADES DE LONGITUD ===");
+
+                Console.Write("Ingresa la cantidad en metros: ");
+        if (!double.TryParse(Console.ReadLine(), out double metros))
+        {
+            Console.WriteLine("Por favor, ingresa un número válido.");
+            return;
+        }
+
+        
+        Console.WriteLine("\n¿A qué unidad deseas convertir?");
+        Console.WriteLine("a. Milímetros");
+        Console.WriteLine("b. Centímetros");
+        Console.WriteLine("c. Decímetros");
+        Console.WriteLine("d. Hectómetros");
+        Console.WriteLine("e. Kilómetros");
+        Console.Write("Selecciona una opción (a-e): ");
+
+        string opcion = Console.ReadLine()?.ToLower() ?? "";
+
+        double resultado = 0;
+        string unidadDestino = "";
+
+        
+        switch (opcion)
+        {
+            case "a":
+                resultado = metros * 1000;
+                unidadDestino = "milímetros";
+                break;
+            case "b":
+                resultado = metros * 100;
+                unidadDestino = "centímetros";
+                break;
+            case "c":
+                resultado = metros * 10;
+                unidadDestino = "decímetros";
+                break;
+            case "d":
+                resultado = metros / 100;
+                unidadDestino = "hectómetros";
+                break;
+            case "e":
+                resultado = metros / 1000;
+                unidadDestino = "kilómetros";
+                break;
+            default:
+                Console.WriteLine("\nOpción no válida. Debes elegir entre 'a' y 'e'.");
+                return;
+        }
+
+       
+        Console.WriteLine($"\n{metros:N0} metros equivale a {resultado:N0} {unidadDestino}.");
+    }
+}
