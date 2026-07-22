@@ -1,0 +1,43 @@
+﻿using System;
+
+class Program
+{
+    static void Main()
+    {
+        string respuesta;
+
+        do
+        {
+            Console.Clear();
+            Console.WriteLine("=== CONVERTIDOR DE MONEDA DE 5 PAÍSES ===");
+            Console.Write("Ingresa la cantidad en tu moneda local: ");
+
+            if (double.TryParse(Console.ReadLine(), out double cantidadLocal) && cantidadLocal >= 0)
+            {
+                // Tasas de cambio (ejemplo referencial)
+                double usd = cantidadLocal * 0.13; // Estados Unidos
+                double eur = cantidadLocal * 0.12; // Unión Europea
+                double mxn = cantidadLocal * 2.25; // México
+                double gbp = cantidadLocal * 0.10; // Reino Unido
+                double jpy = cantidadLocal * 20.50; // Japón
+
+                Console.WriteLine("\n--- EQUIVALENCIAS ---");
+                Console.WriteLine($"1. Estados Unidos (USD):  $ {usd:F2}");
+                Console.WriteLine($"2. Unión Europea (EUR):   € {eur:F2}");
+                Console.WriteLine($"3. México (MXN):          $ {mxn:F2}");
+                Console.WriteLine($"4. Reino Unido (GBP):     £ {gbp:F2}");
+                Console.WriteLine($"5. Japón (JPY):           ¥ {jpy:F2}");
+            }
+            else
+            {
+                Console.WriteLine("Por favor, ingresa una cantidad válida.");
+            }
+
+            Console.Write("\n¿Deseas convertir otra cantidad? (s/n): ");
+            respuesta = Console.ReadLine()?.ToLower() ?? "n";
+
+        } while (respuesta == "s" || respuesta == "si");
+
+        Console.WriteLine("\n¡Gracias por usar el convertidor!");
+    }
+}
