@@ -1,0 +1,86 @@
+﻿C#
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Ingresa tu mes de nacimiento (1-12): ");
+        int mes = int.Parse(Console.ReadLine());
+
+        Console.Write("Ingresa tu día de nacimiento (1-31): ");
+        int dia = int.Parse(Console.ReadLine());
+
+        string signo = "";
+        string horoscopo = "";
+
+        if ((mes == 3 && dia >= 21) || (mes == 4 && dia <= 19))
+        {
+            signo = "Aries";
+            horoscopo = "Hoy tendrás una energía desbordante para iniciar nuevos proyectos.";
+        }
+        else if ((mes == 4 && dia >= 20) || (mes == 5 && dia <= 20))
+        {
+            signo = "Tauro";
+            horoscopo = "La paciencia será tu mejor aliada para lograr lo que te propones.";
+        }
+        else if ((mes == 5 && dia >= 21) || (mes == 6 && dia <= 20))
+        {
+            signo = "Géminis";
+            horoscopo = "Tu curiosidad te llevará a descubrir grandes oportunidades.";
+        }
+        else if ((mes == 6 && dia >= 21) || (mes == 7 && dia <= 22))
+        {
+            signo = "Cáncer";
+            horoscopo = "Conectarás profundamente con las personas que más quieres.";
+        }
+        else if ((mes == 7 && dia >= 23) || (mes == 8 && dia <= 22))
+        {
+            signo = "Leo";
+            horoscopo = "Tu brillo personal destacará en cualquier lugar al que vayas.";
+        }
+        else if ((mes == 8 && dia >= 23) || (mes == 9 && dia <= 22))
+        {
+            signo = "Virgo";
+            horoscopo = "El orden y la disciplina te traerán la paz que estás buscando.";
+        }
+        else if ((mes == 9 && dia >= 23) || (mes == 10 && dia <= 22))
+        {
+            signo = "Libra";
+            horoscopo = "Encontrarás el equilibrio perfecto en tus decisiones difíciles.";
+        }
+        else if ((mes == 10 && dia >= 23) || (mes == 11 && dia <= 21))
+        {
+            signo = "Escorpio";
+            horoscopo = "Tu intuición estará muy aguda, confía en tus corazonadas.";
+        }
+        else if ((mes == 11 && dia >= 22) || (mes == 12 && dia <= 21))
+        {
+            signo = "Sagitario";
+            horoscopo = "Una gran aventura o aprendizaje nuevo llegará a tu vida.";
+        }
+        else if ((mes == 12 && dia >= 22) || (mes == 1 && dia <= 19))
+        {
+            signo = "Capricornio";
+            horoscopo = "Tu esfuerzo constante empezará a rendir grandes frutos.";
+        }
+        else if ((mes == 1 && dia >= 20) || (mes == 2 && dia <= 18))
+        {
+            signo = "Acuario";
+            horoscopo = "Tus ideas creativas e innovadoras sorprenderán a todos.";
+        }
+        else if ((mes == 2 && dia >= 19) || (mes == 3 && dia <= 20))
+        {
+            signo = "Piscis";
+            horoscopo = "Tu empatía e imaginación te permitirán crear momentos mágicos.";
+        }
+        else
+        {
+            Console.WriteLine("Fecha no válida.");
+            return;
+        }
+
+        Console.WriteLine($"\nTu signo es: {signo}");
+        Console.WriteLine($"Horóscopo: {horoscopo}");
+    }
+}
